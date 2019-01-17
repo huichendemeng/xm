@@ -1,0 +1,219 @@
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+#nav-header{
+    width:100%;
+    margin:0 auto 20px;
+}
+/*头部第一行的样式*/
+#nav-header .yi a,#nav-header .yi span{
+    color: #999999;
+}
+#nav-header .yi>span{
+    margin-right:4%;
+}
+#nav-header .yi img{
+    width:25px;
+    height:25px;
+    vertical-align: middle;
+}
+#nav-header .yi>span>span{
+    font-size:12px;
+}
+#nav-header .yi .yi5{
+    float:right;
+    width:120px;
+    height:40px;
+    position: relative;
+}
+#nav-header .yi .yi5:hover{
+    cursor: pointer;
+}
+#nav-header .yi .yi5 .yi51{
+    line-height: 40px;
+    margin-left:10px;
+}
+#nav-header .yi .yi5 .jt{
+    width:10px;
+    height:10px;
+    display:inline-block;
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    transform: rotate(-45deg);
+    position: relative;
+    top:-4px;
+    left:10px;
+}
+#nav-header .yi .yi52{
+    width:430px;
+    display:inline-block;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding:10px 10px;
+    text-align: justify;
+    position: absolute;
+    left:-332px;
+    background-color: #ffffff;
+    z-index: 10000000;
+    display:none;
+    border-radius: 7px;
+    border-top-right-radius: 0;
+}
+#nav-header .yi .yi52 .yi521{
+    float: left;
+    text-align: center;
+}
+#nav-header .yi .yi52 .yi522{
+    float: right;
+    text-align: center;
+}
+#nav-header .yi  .yi52 .yi521{
+    padding-bottom: 30px;
+}
+#nav-header .yi  .yi52 img{
+    width:150px;
+    height:120px;
+    vertical-align: middle;
+}
+#nav-header .yi  .yi52 .yi523{
+    width:200px;
+    font-size:12px;
+    margin-top:20px;
+}
+/*头部第二行的样式*/
+#nav-header .er{
+    margin-top:30px;
+}
+#nav-header .er>img{
+    width:260px;
+    height:50px;
+}
+#nav-header .er .er11 input{
+    width:300px;
+    height:34px;
+    border: 1px solid #999999
+}
+#nav-header .er .er11 img,#nav-header .er>img,#nav-header .er .er2 img,#nav-header .er{
+    vertical-align: middle
+}
+#nav-header .er .er2{
+    margin-left:30px; 
+}
+#nav-header .er .er2 img{
+    width:50px;
+    height:50px;
+}
+#nav-header .er{
+    line-height: 50px;
+}
+#nav-header .er .er21{
+    padding-left:20px; 
+}
+#nav-header .er .er21 input{
+    width:300px;
+    height:36px;
+    display: none;
+}
+#nav-header .er .er21 img{
+    width:50px;
+    height: 40px;
+    display: none;
+}
+/*头部第三行的样式*/
+#nav-header .san{
+    margin-top:30px;
+}
+#nav-header #san1{
+    display: flex;
+    justify-content: space-around;
+    flex-shrink:1;
+    width: 100%;
+    position: relative;
+}
+#nav-header #san1 a{
+    padding:0 11px;
+    line-height: 60px;
+    display: inline-block;
+    background-color:#eeeeee;
+    color: #5394b0;
+    font-size: 14px;
+}
+#nav-header #san1 a:hover{
+    color:#bc0e5e;
+    background-color: #ffffff
+}
+
+#nav-header #san2 #san22,
+#nav-header #san2 #san23,
+#nav-header #san2 #san24,
+#nav-header #san2 #san25,
+#nav-header #san2 #san26,
+#nav-header #san2 #san27,
+#nav-header #san2 #san28,
+#nav-header #san2 #san29{
+    display: none;
+}
+#nav-header #san2{
+    width:1000px;
+    height:400px;
+    border:1px solid #999999;
+    margin-top:-10px;
+    position: absolute;
+    background-color: #ffffff;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    display: none;
+}
+#nav-header #san2 div{
+display: flex;
+justify-content: space-around
+}
+#nav-header #san2>div ul li a{
+    color:#666666;
+}
+#nav-header #san2>div ul li b{
+    color: #bc0e5e;
+    font-size: 13px;
+}
+#nav-header #san2>div ul li a:hover{
+    color:#bc0e5e;
+}
+@media screen and (max-width:1020px) {
+    #nav-header .san{
+        display: none;
+    }
+}
+@media screen and (max-width:945px) {
+    #nav-header .yi .yi5{
+        display: none;
+    }
+}
+@media screen and (max-width:914px) {
+    #nav-header{
+        width:96%;
+        padding:0 2%;
+    }
+    #nav-header .yi .yi4{
+        display: none;
+    }
+}
+@media screen and (max-width:750px) {
+    #nav-header{
+        width:96%;
+        padding:0 2%;
+    }
+    #nav-header .er .er1{
+        display: none;
+    }
+    #nav-header .yi .yi5,#nav-header .yi .yi3{
+        display: none;
+    }
+    #nav-header .er .er21 img{
+        display: inline-block;
+    }
+    #nav-header .er .er21 input{
+        width:80%;
+    }
+}

@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    width:100%;
+    background-image: url("../img/beijing.jpg")
+}
+#index{
+    max-width:1000px;
+    margin: 0 auto;
+}
+#index #body #zuo{
+    width:24%;
+    float: left;
+}
+#index #body #you{
+    width:76%;
+    float: left;
+}
+#index #footer{
+    clear: both;
+}
+.clearfix{
+    clear: both
+}
+@media screen and (min-width:790px){
+    #index #body #you{
+        width:76%;
+    }
+}
+@media screen and(max-width:1020px) {
+    #index #body #you{
+        width:70%;
+    }
+    #index #body #zuo{
+        width:200px;
+    }
+}
+@media screen and (max-width:820px) {
+    #index #body #zuo{
+        display: none;
+    }
+    #index #body #you{
+        width:760px;
+    }
+}

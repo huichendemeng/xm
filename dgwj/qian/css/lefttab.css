@@ -1,0 +1,25 @@
+#leftTab a{
+    text-decoration: none;
+    color:#666666;;
+}
+#leftTab a:hover{
+    color:#bc0e5e;
+}
+#leftTab ul li{
+    list-style: none;
+    font-size: 12px;
+    margin-left:20px;
+}
+#leftTab{
+    width:100%;
+}
+#left2 .left2t .left21t{
+    border-top:1px solid #cccccc;
+}
+#left2 .left2t .left21t span{
+    color: #bc0e5e;
+    font-size: 14px;
+}
+#leftTab #left2 .left23t{
+    font-size:12px;
+}

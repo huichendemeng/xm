@@ -1,0 +1,81 @@
+#footer{
+    background-color: #eeeeee;
+    padding:20px 50px;
+}
+#footer .zb .zb3 a,#footer .zb .zb4 a{
+    display: inline-block;
+    margin-right:10px;
+}
+#footer .zb .zb3 .btn{
+    display: inline-block;
+    width:72px;
+    height:30px;
+    border: 2px solid #999999;
+    text-align: center;
+    margin-left:20px;
+}
+#footer .zb .zb5 img:first-child{
+    margin-left:0;
+}
+#footer a{
+    text-decoration: none;
+    font-size:12px;
+}
+#footer a,#footer span{    
+    color: #666666;
+}
+#footer span,a{
+    line-height:30px;
+    font-size:13px;
+    margin:10px 0;
+}
+#footer .zb img,#footer .yb img{
+
+    height:30px;
+    vertical-align: middle
+}
+#footer .zb img{  
+     margin: 10px 10px;
+}
+#footer .yb img{
+    margin-left: 5px;
+}
+#footer {
+    display: flex;  
+}
+#footer .yb>div{
+    display: flex;
+    justify-content:flex-end
+}
+@media screen and (max-width:784px){
+    #footer { 
+        display:block;
+        width:764px;
+        padding:0 0;
+    }
+    #footer .yb>div{
+        display: block;
+    }
+    #footer .yb>div,#footer .zb>div{
+        text-align: center
+    }
+    #footer .br{
+        display:block;
+    }
+}
+@media screen and (max-width:640px) {
+    #footer { 
+        display:block;
+        width:620px;
+        padding:0 0;
+    }
+    #footer .yb>div{
+        display: block;
+    }
+    #footer .yb>div,#footer .zb>div{
+        text-align: center
+    }
+    #footer .br{
+        display:block;
+    }
+}

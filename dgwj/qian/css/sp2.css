@@ -1,0 +1,96 @@
+#sp2 .tuijian h3,#sp2 h1{
+    color:#666666;
+    margin:20px 0;
+}
+#sp2 h1{
+    text-align: center;
+}
+#sp2 .tuijian .tjlb img{
+   width: 368px;;
+   height: 200px;
+}
+#sp2 .tuijian .tjlb img:nth-child(1){
+    margin-right:17px;
+    margin-bottom:17px;
+}
+#sp2 .tuijian .tjlb img:nth-child(3){
+    margin-right:17px;
+}
+#sp2 .tuijian .tjlb img:nth-child(2){
+    margin-bottom:17px;
+}
+#sp2 .dapai>div div img{
+    width:178.5px;
+    height:178.5px;
+}
+#sp2 .dapai a{
+    width:178.5px;
+    text-align: center
+}
+#sp2 .dapai>div>div{
+    float: left
+}
+#sp2 .dapai>div>div>div a{
+    color: #bc0e5e;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 48px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 4px;
+}
+#sp2 .dapai>div>div>a{
+    color: #666666;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-top: 1px solid #cccccc;
+    display: block;
+    line-height: 34px;   
+}
+@media screen and (max-width:1020px) {
+    #sp2{
+        width:620px;
+    }
+    #sp2 .tuijian .tjlb img{
+        width: 45%;
+     }
+     #sp2 .dapai{
+         padding:0 10%;
+     }
+     #sp2 .dapai>div>h1{ 
+         text-align: center;     
+        font-size: 22px;
+        position: relative;
+        left:-35px;
+    }
+    #sp2 .dapai>div{
+        width:49%;
+        display: inline-block
+    }
+
+}
+@media screen and (max-width:780px) {
+    #sp2{
+        width:620px;
+    }
+    #sp2 .tuijian .tjlb img{
+        width: 45%;
+     }
+     #sp2 .dapai{
+         padding:0 10%;
+     }
+     #sp2 .dapai>div>h1{ 
+         text-align: center;     
+        font-size: 22px;
+        position: relative;
+        left:-35px;
+    }
+    #sp2 .dapai>div{
+        width:49%;
+        display: inline-block
+    }
+
+}

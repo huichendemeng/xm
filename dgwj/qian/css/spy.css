@@ -1,0 +1,222 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    width:1000px;
+    margin:0 auto;
+    background-image: url("../img/beijing.jpg")
+}
+a{
+    color:#999999;
+}
+/* 第一行样式 */
+#body .spy .spy_title{
+    font-size:12px;
+    color:#999999;
+}
+#body .spy .spy_xq{
+    margin:30px 0;
+}
+#body .spy .spy_xq .spys_shang{
+    width:100%;
+    height:470px;
+    display:flex;
+    justify-content: space-around;
+
+}
+#body .spy .spy_xq .spys_shang .spyssz_img{
+    width:37.5%; 
+    height:auto;
+    position: relative;
+}
+
+#body .spy .spy_xq .spys_shang .spyss_you{
+    width:17%;
+}
+#body .spy .spy_xq .spys_shang .spyssz_img .bjpic{
+    position:absolute;
+    left:90%;
+    top:30px;
+}
+#body .spy .spy_xq .spys_shang .spyssz_img .img_ll{
+    height:60px;
+}
+#body .spy .spy_xq .spys_shang .spyssz_img .img_ll img{
+    padding:0 7%;
+    width:10.1%;
+    height:auto;
+}
+#body .spy .spy_xq .spys_shang .spyssz_img .bjpic img{
+    width:45px;
+    height:23px;
+}
+#body .spy .spy_xq .spys_shang .spyssz_img .sppic{
+    width:100%;
+    height:345px;
+}
+
+/* 上面的中间 */
+#body .spy .spy_xq .spys_shang .spyssz_money{  
+    width:37.5%;
+    margin-left:2%;
+    color:#999999;
+}
+#body .spy .spy_xq .spys_shang .spyssz_money>span{
+    font-weight: 300;
+    font-size: 26px;
+}
+#body .spy .spy_xq .spys_shang .spyssz_money .guanyu{
+    font-size:12px;
+}
+#body .spy .spy_xq .spys_shang .spyssz_money .spjg{
+    display: flex;
+    justify-content: space-around;
+    border:1px solid red;
+    padding:15px;
+    font-size:10px;
+}
+#body .spy .spy_xq .spys_shang .spyssz_money .spjg .sp_img img{
+    width:50px;
+    height:50px;
+}
+#body .spy .spy_xq .spys_shang .spyssz_money .spjg .sp_shui{
+    margin-left:20px;
+}
+#body .spy .spy_xq .spys_shang .spyssz_money .spjg .sp_jg div:nth-child(2){
+    color:#BC0E5E
+}
+#body .spy .spy_xq .spys_shang .spyssz_money .spjg .sp_jg div:nth-child(3){
+    color:#B2C67F
+}
+/* you */
+#body .spy .spy_xq .spys_shang .spyss_you{
+    color:#999999;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_gm div:nth-child(1){
+    color:#BC0E5E;
+    font-size:26px;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_gm div{
+    margin-bottom: 6px;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_gm div:not(:nth-child(1)){
+    font-size:12px;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_gm div:nth-child(2){
+    color:#B2C67F;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_gm div select{
+    width:40px;
+    height:30px;
+    margin-left:10px;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_gm div:last-child{
+    margin-top: 15px;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_xx button{
+    width:100%;
+    line-height:50px;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_xx .jrgwc{
+    background-color:#BC0E5E;
+    color:#ffffff;
+    text-align: center;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_xx .wxfx{
+    background-color:#9BB154;
+    color:#ffffff;
+    text-align: center;
+    margin-top:15px;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .you_xx .wxfx img{
+    vertical-align: middle;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .yuji{
+    font-size:12px;
+}
+#body .spy .spy_xq .spys_shang .spyss_you .yuji div:first-child{
+    margin:6px 0;
+    color:#000000;
+    font-size:16px;
+}   
+ #body .spy .spy_xq .spys_shang .spyss_you .yuji div:first-child img{
+     vertical-align: middle;
+ }
+/* xia */
+#body .spy .spy_xq ul {
+    list-style: none;
+    
+}
+#body .spy .spy_xq ul li{
+    font-size:10px;
+}
+#body .spy .spy_xq .spys_xia{
+    color: #666666;
+}
+#body .spy .spy_xq .spys_xia div{
+    margin:0 0 13px;
+}
+#body .spy .spy_xq .spys_xia .xia_biaoti span{
+    font-size: 26px;
+    height:58px;
+    border-bottom:3px solid #BC0E5E;
+    padding-bottom:6px;
+}
+#body .spy .spy_xq .spys_xia .xia_spjj{
+    margin-top:40px;
+}
+#body .spy .spy_xq .spys_xia .xia_spjj .spjj_title1 h2{
+    font-weight: 300;
+}
+#body .spy .spy_xq .spys_xia .xia_spjj .spjj_title2,p{
+    font-size:10px;
+}
+#body .spy .spy_xq .spys_xia .xia_spjj .spjj_xq .jjxq_title{
+    font-size:22px;
+}
+#body .spy .spy_xq .spys_xia .xia_spjj .jjxq_img img{
+    width:300px;
+    height:171px;
+}
+#body .spy .spy_xq .spys_xia .xia_spjj p{
+    margin:20px 0;
+}
+#body .spy .spy_xq .spys_xia .xia_spjj .jjxq_bz img{
+    width:100%;
+    height:auto;
+}
+#body .spy .spy_xq .spys_xia .xia_spjj h2{
+    font-weight:300;
+}
+@media screen and (max-width:1000px){
+    body{
+        width:100%;
+    }
+}
+@media screen and (max-width:600px){
+    #body .spy .spy_xq .spys_shang{
+        display:block;
+        width:100%;
+        height: auto;
+        padding:0 2%;
+    
+    }
+    #body .spy .spy_xq .spys_shang .spyssz_img{
+        width:100%;
+        height:auto;
+        position: relative;
+    }
+    #body .spy .spy_xq .spys_shang .spyssz_money{  
+        width:100%;
+        margin-left:2%;
+        color:#999999;
+    }
+    
+    #body .spy .spy_xq .spys_shang .spyss_you{
+        width:100%;
+    }
+    #body .spy .spy_xq{
+        padding: 0 2%;
+    }
+}

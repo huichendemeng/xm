@@ -1,0 +1,51 @@
+
+a{
+    color:#666666;
+    text-decoration: none
+}
+body{
+    width:1000px;
+    margin: 0 auto
+}
+#pinpai .pp_title{
+    color: #666666;
+    font-size: 12px;
+    height: 43px;
+}
+#pinpai .pp_content{
+    color:#666666
+}
+#pinpai .pp_daohang{
+    height: 42px;
+
+}
+#pinpai .pp_daohang a{
+    color: #5394b0;
+    font-size: 15px;
+}
+#pinpai .pp_ppdan>div{
+    padding: 20px 0;
+    font-size:12px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    font-size: 15px;
+}
+#pinpai .pp_ppdan>div span{
+    display: inline-block;
+    padding-bottom:6px;
+}
+#pinpai .pp_ppdan>div>span:first-child{    
+    width:10%;
+    vertical-align: top;
+    color: #5394b0; 
+}
+#pinpai .pp_ppdan>div>span:last-child{
+    width:88%;
+}
+
+#pinpai .pp_ppdan>div>span:last-child span{
+    width:49%;
+}
+#pinpai .pp_ppdan>div>span>span{
+    width:45%;
+}
