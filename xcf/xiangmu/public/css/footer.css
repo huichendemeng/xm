@@ -1,0 +1,48 @@
+#footer{
+	margin-top:100px;
+	margin-left:420px;
+}
+#fo_gg{
+	position:relative;
+}
+#fo_gg .rz,#fo_gg .hz{
+background-color:#84cf6d;
+	width:141px;
+	padding:5px;
+	height:36px;
+	text-align:center;
+	padding-top:20px;
+}
+#fo_gg .hz{
+	width:102px;
+	position:absolute;
+	left:270px;
+	top:-1px;
+}
+#fo_gg a{
+text-decoration:none;
+	color:white;
+}
+
+#fo_lj a,#fo_wenzi,#fo_wenzi p,#fo_lj{
+	text-decoration:none;
+	color:gray;
+	font-size:14px;
+	margin-top:10px;
+}
+#fo_lj .top{
+	margin-left:10px;
+
+}
+#weizi{
+width:100px;
+margin-left:1250px;
+margin-top:-800px;
+}
+#weizi ul{
+list-style:none;
+}
+#weizi ul li{
+font-size:40px;
+}
+

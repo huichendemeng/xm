@@ -1,0 +1,43 @@
+#gg{
+	width:970px;
+	height:90px;
+	margin:20px auto 40px;
+	position:relative;
+}
+#ggz,#shanchu,#guge{
+height:15px;
+position:absolute;
+background-color:white;
+top:1px;
+}
+#ggz,#shanchu{
+	color:blue;
+}
+#ggz{
+	width:26px;
+	left:924.7px;
+	font-size:8px;
+	padding-left:2px;
+	position:relative;
+    top:17px;
+}
+#ggz:hover #guge{
+	display:inline;
+}
+#shanchu{
+	font-size:12px;
+	position:relative;
+    top:17px;
+	left:963px;
+}
+#guge{
+	width:46px;
+	height:16px;
+	border-bottom-left-radius:20%;
+	font-size:13px;
+	padding-left:6px;
+	position:absolute;
+	left:885px;
+	top:21px;
+	display:none;
+}

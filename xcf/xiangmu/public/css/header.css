@@ -1,0 +1,99 @@
+*{
+ margin:0;
+ padding:0;
+ }
+ #header{
+	width:100%;
+	height:90px;
+	border:1px solid #f3f3f3;
+	position: fixed;
+	top:-7px;
+	background-color:#fff;
+	z-index: 10;
+ }
+ .chufang,#sousuo,#daohang,#daohang .hong ,.soucai{
+	list-style:none;
+	margin-top:15px;
+	float:left;
+	
+ }
+ #daohang .hong a,#sousuo input{
+	text-decoration:none;
+ }
+ .chufang{
+	margin-left:430px;
+	margin-top:17px;
+	width:120px;
+	height:40px;
+ }
+ #sousuo input{
+	width:300px;
+	font-size:18px;
+	margin-left:35px;
+	height:44px;
+ }
+ .soucai{
+ 	border:0;
+	width:79px;
+	height:48px;
+	font-size:17px;
+	background-color:red;
+	color:white;
+ }
+#daohang .hong a{
+	margin-left:20px;
+	color:red;
+}
+#daohang .juli{
+	margin-right:70px;
+}
+#daohang .xlk a{
+	position:relative;
+}
+#xlcd{
+	width:384px;
+	height:300px;
+	background-color:#e8eae8;
+	position:absolute;
+	left:900px;
+	top:52px;
+	z-index:10;
+	display:none;
+	
+}
+#daohang .xlk:hover #xlcd{
+	display:block;
+}
+.ulb ul{
+	margin-top:20px;
+	list-style:none;
+	float:left;
+	width:108px;
+	margin-left:15px;
+}
+.flc{
+	position:relative;
+	top:30px;
+	left:110px;
+	font-size:20px;
+	width:160px;
+	height:50px;
+}
+.ulb{
+	padding-bottom:10px;
+}
+.zuo{
+	margin-left:10px;
+}
+.you{
+	margin-left:25px;
+}
+.hui{
+	margin-bottom:20px;
+}
+#zhuti{
+margin-top:70px;
+}
+#gg{
+margin-top:70px;
+}
