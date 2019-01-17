@@ -1,0 +1,68 @@
+/**
+ * [lazyAjax description]
+ * @param  {[type]} params.scrollTarget 出滚动条的element jq选择器，如果是body,该参数不填，或者为window
+ * @param  {[type]} params.offsetHeight 距离可视区域多少个像素开始加载，默认为0
+ * @param  {[type]} params.ajaxSuccessCallbacHandler 请求加载成功后回调函数
+ * @return {[type]}        延迟加载请求插件
+ */
+$.fn.lazyAjax = function(params) {
+    var $context = $(this);
+    var elementInfos = new Array();
+    var winHeight = $(window).height();
+    var scrollTarget = (params && params.scrollTarget) || window;
+    var offsetHeight = (params && params.offsetHeight) || 0;
+    var $scrollTarget = $(scrollTarget);
+    var ajaxSuccessCallbacHandler = (params && typeof params.ajaxSuccessCallbacHandler == 'function' && params.ajaxSuccessCallbacHandler) || function(msg) {
+        console.log(msg)
+    };
+    var ajaxErrorCallbacHandler = (params && typeof params.ajaxErrorCallbacHandler == 'function' && params.ajaxErrorCallbacHandler) || function(xhr, errorMassage, e) {
+        console.log(e)
+    };
+    $context.each(function(i) {
+        var info = {};
+        info.mark = 'item' + i;
+        info.status = false;
+        info.height = $(this).offset().top;
+        info.url = $(this).attr('data-lazy-url');
+        elementInfos.push(info);
+    });
+
+    $scrollTarget.scroll(function(event) {
+        scrollHandler();
+    });
+
+    scrollHandler();
+
+    function scrollHandler() {
+        $.each(elementInfos, function(i, item) {
+            //console.log(isRequest(item.height));
+            if (!item.status && isRequest(item.height)) {
+                sendReq(item.url, i);
+            }
+        });
+    };
+
+    function isRequest(elementHeight) {
+        var scrollHeight = $scrollTarget.scrollTop();
+        return elementHeight - scrollHeight <= (winHeight + offsetHeight);
+    };
+
+    function sendReq(url, index) {
+        // console.log('send req' + url);
+        elementInfos[index].status = true;
+        $.ajax({
+            type: "GET",
+            url: url,
+            // data: "name=John&location=Boston",
+            dataType: "json",
+            success: function(msg) {
+                ajaxSuccessCallbacHandler(msg);
+            },
+            error: function(xhr, errorMassage, e) {
+                ajaxErrorCallbacHandler(xhr, errorMassage, e);
+            }
+        });
+    };
+
+    return this;
+};

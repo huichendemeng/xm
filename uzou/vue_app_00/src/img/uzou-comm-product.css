@@ -1,0 +1,156 @@
+.uzou-comm-product,
+.uzou-comm-product-h {
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.uzou-comm-product-h {
+    height: 160px;
+}
+
+.uzou-comm-product .uzou-comm-product-img,
+.uzou-comm-product-h .uzou-comm-product-img {
+    width: 100%;
+}
+
+.uzou-comm-product .uzou-comm-product-price,
+.uzou-comm-product .uzou-comm-product-bprice,
+.uzou-comm-product-h .uzou-comm-product-price {
+    line-height: 24px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    background: #fff;
+    z-index: 999;
+}
+
+.uzou-comm-product .uzou-comm-product-price {
+    bottom: 25%;
+     min-width:92px;
+}
+
+.uzou-comm-product-h .uzou-comm-product-price {
+    bottom: 50px;
+   min-width:92px;
+}
+
+.uzou-comm-product .uzou-comm-product-bprice {
+    bottom: 70px;
+    min-width:92px;
+}
+
+.uzou-comm-product .uzou-comm-product-price div,
+.uzou-comm-product-h .uzou-comm-product-price div {
+    padding: 0 5px;
+    text-align: center;
+}
+
+.uzou-comm-product .uzou-comm-product-price .uzou-comm-price-wb,
+.uzou-comm-product .uzou-comm-product-bprice .uzou-comm-price-wb,
+.uzou-comm-product-h .uzou-comm-product-price .uzou-comm-price-wb {
+    font-size: 12px;
+    line-height: 24px;
+    height: 24px;
+    color: #ec7b1e;
+    background: #fff;
+}
+
+.uzou-comm-product .uzou-comm-product-price .uzou-comm-price-rmb,
+.uzou-comm-product .uzou-comm-product-bprice .uzou-comm-price-rmb,
+.uzou-comm-product-h .uzou-comm-product-price .uzou-comm-price-rmb {
+    font-size: 14px;
+    line-height: 32px;
+    height: 32px;
+    color: #fff;
+    background: #ec7b1e;
+}
+
+.uzou-comm-product .uzou-comm-product-ttitle,
+.uzou-comm-product .uzou-comm-product-mtitle,
+.uzou-comm-product .uzou-comm-product-headline,
+.uzou-comm-product .uzou-comm-product-vtitle,
+.uzou-comm-product-h .uzou-comm-product-ttitle,
+.uzou-comm-product-h .uzou-comm-product-mtitle,
+.uzou-comm-product-h .uzou-comm-product-headline,
+.uzou-comm-product-h .uzou-comm-product-vtitle {
+    position: absolute;
+    z-index: 22;
+    overflow: hidden;
+    width: 100%;
+    color: #fff;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.uzou-comm-product .uzou-comm-product-ttitle,
+.uzou-comm-product-h .uzou-comm-product-ttitle {
+    bottom: 0;
+    padding: 50px 5px 2px 5px;
+}
+
+.uzou-comm-product .uzou-comm-product-stitle,
+.uzou-comm-product-h .uzou-comm-product-stitle {
+    margin: 4px 0 8px 0;
+    color: #555;
+}
+
+.uzou-comm-product .uzou-comm-product-mtitle,
+.uzou-comm-product-h .uzou-comm-product-mtitle {
+    line-height: 20px;
+    text-align: center;
+    color: #555;
+}
+
+.uzou-comm-product .uzou-comm-product-headline,
+.uzou-comm-product-h .uzou-comm-product-headline {
+    bottom: 0;
+    padding: 10px 5px 0 5px;
+}
+
+.uzou-comm-product .uzou-comm-product-vtitle,
+.uzou-comm-product-h .uzou-comm-product-headline {
+    top: 0;
+    bottom: 0;
+    height: 100%;
+}
+
+.uzou-comm-product .uzou-comm-product-vtitle p,
+.uzou-comm-product-h .uzou-comm-product-vtitle p {
+    position: absolute;
+    text-align: center;
+    z-index: 23;
+    top: 50%;
+    left: 50%;
+    display: table-cell;
+    overflow: hidden;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-overflow: ellipsis;
+}
+
+.uzou-comm-gradient1 {
+    background: -webkit-linear-gradient(rgba(230, 230, 230, 0), rgba(0, 0, 0, .85));
+    background: -o-linear-gradient(rgba(230, 230, 230, 0), rgba(0, 0, 0, .85));
+    background: -moz-linear-gradient(rgba(230, 230, 230, 0), rgba(0, 0, 0, .85));
+    background: linear-gradient(rgba(230, 230, 230, 0), rgba(0, 0, 0, .85));
+}
+
+.uzou-line-clamp1 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.uzou-line-clamp2 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+}

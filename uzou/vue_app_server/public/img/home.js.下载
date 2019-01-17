@@ -1,0 +1,70 @@
+$(function () {
+    uzouComm.generate({
+        selectIcon: 'public/new/images/home/homeicon/myhome.png',
+        data: [
+            {
+                icon: 'public/new/images/home/homeicon/myhomeicon.png',
+                iconSel: 'public/new/images/home/homeicon/myhome.png',
+                url: 'findAll_index',
+                name: '首页',
+                type: 1
+            },
+            {
+                icon: 'public/new/images/home/homeicon/destination.png',
+                iconSel: 'public/new/images/home/homeicon/destinationicon.png',
+                url: 'des_index',
+                name: '目的地',
+                type: 0
+            },
+            {
+                icon: 'public/new/images/home/homeicon/mycenter.png',
+                iconSel: 'public/new/images/home/homeicon/nycentericon.png',
+                url: 'mycenter',
+                name: '我',
+                type: 0
+            }
+        ]
+    });
+    $.ajax({
+        type: "GET",
+        url: "getfrontHome_contentPromotion",
+        data: "platform=m-h5",
+        dataType: "json",
+        beforeSend: function () {
+            $("#list_loading").show();
+        },
+        success: function (msg) {
+            if (msg.result) {
+                var divId;
+                $.each(msg.message.details, function (i, item) {
+                    promotDataAnalysis.promotion('home', 'mainContainer', item);
+                    divId = '0_' + item.promotion_type + '_' + item.layout + '_' + item.promotion_id;
+                    $('#' + divId).lazyAjax({
+                        ajaxSuccessCallbacHandler: function (data) {
+                            promotDataAnalysis.promotionAdapter(item);
+                            if (data.result) {
+                                data.message.index = 0;
+                                data.message.loginStatus=data.message; 
+                                
+                                promotDataAnalysis.promotionAdapter(data.message);
+                                $('#0_' + item.promotion_type + '_' + item.layout + '_' + item.promotion_id + ' img.lazy').lazyload({
+                                    effect: "fadeIn",
+                                    container: $("#mainContainer"),
+                                    skip_invisible: false
+                                });
+                            } else {
+                                console.error(data.message);
+                            }
+                        }
+                    });
+                });
+            }
+        },
+        complete: function () {
+            $("#list_loading").hide();
+        },
+        error: function (data) {
+            console.info('data error');
+        }
+    })
+})

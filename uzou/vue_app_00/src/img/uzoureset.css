@@ -1,0 +1,164 @@
+body {
+    font-family: Helvetica;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+
+/* 未被访问的链接 */
+
+a:visited {
+    text-decoration: none;
+    color: #ccc;
+}
+
+
+/* 已被访问的链接 */
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/* 鼠标指针移动到链接上 */
+
+a:active {
+    text-decoration: none;
+}
+
+
+/* 正在被点击的链接 */
+
+.home-main {
+    position: relative;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+#list_loading{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.list_loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+     display: none;
+}
+
+.uzou-scroll {
+    -webkit-overflow-scrolling: touch;
+}
+
+.uzou-sm-bottom {
+	display:block;
+    margin-bottom: 5px;
+}
+
+.uzou-md-bottom {
+	display:block;
+    margin-bottom: 10px;
+}
+
+.uzou-lg-bottom {
+	display:block;
+    margin-bottom: 20px;
+}
+
+.uzou-col-sm-right {
+    margin-right: 5px;
+}
+
+.uzou-col-md-right {
+    margin-right: 8px;
+}
+
+.uzou-col-lg-right {
+    margin-right: 15px;
+}
+
+.uzou-sm-padding {
+    padding: 0 5px;
+}
+
+.uzou-md-padding {
+    padding: 0 8px;
+}
+
+.uzou-lg-padding {
+    padding: 0 15px;
+}
+
+.hot-recommend .hot-lable-color1 {
+    color: #38ccaa;
+    border: 1px solid #38ccaa;
+}
+
+.hot-recommend .hot-lable-color2 {
+    color: #76b0fe;
+    border: 1px solid #76b0fe;
+}
+
+.hot-recommend .hot-lable-color3 {
+    color: #f80;
+    border: 1px solid #f80;
+}
+
+.hot-recommend .hot-lable-color4 {
+    color: #ff86b2;
+    border: 1px solid #ff86b2;
+}
+
+.text-shadow1 {
+    text-shadow: 2px 2px 2px #555;
+}
+
+.pink-left {
+    border-left-color: #fb94b2;
+}
+
+.orange-left {
+    border-left-color: #f5c746;
+}
+
+.theme-green-left {
+    border-left-color: #42d2a9;
+    ;
+}
+
+.pink-color {
+    color: pink;
+}
+.list-price-qi {
+    font-size: 6px;
+}

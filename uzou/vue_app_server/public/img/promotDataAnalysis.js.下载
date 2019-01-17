@@ -1,0 +1,583 @@
+
+
+var promotDataAnalysis = {
+    /**
+     * @param  {[string]}    wrapType      [HOME：首页模块   destination 目的地]
+     * @param  {[string]}    wrapRender    [selector]
+     * @param  {[json obj]}  promotionItem [jsonData]
+     * @return
+     */
+    promotion: function(wrapType, wrapRender, promotionItem) {
+        var tpl;
+        var html;
+        switch (wrapType) {
+            case 'home':
+                tpl = '<div id="0_${promotion_type}_${layout}_${promotion_id}" data-lazy-url="getDetail_promotionDetail?id=${promotion_id}"></div>';
+                break;
+            case 'destination':
+                tpl = '<div class="hot-dest-left-wrap" id="destination-left">' +
+                    '<div class="hot-dest-wrap">' +
+                    '{@each details as item,index}' +
+                    '<div class="destination-item">${item.name}</div>' +
+                    '{@/each}' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="hot-dest-right-wrap" id="destination-right">' +
+                    '{@each details as city,index}' +
+                    '{@if city.type=="1"}' +
+                    '<div class="hot-dest-wrap"  data-ajax="false"  data-areaCode="${city.city}"><img src="public/new/images/home/loading.gif" class="list_loading">' +
+                    '{@else}' +
+                    '<div class="hot-dest-wrap"  data-ajax="false"  ><img src="public/new/images/home/loading.gif" class="list_loading">' +
+                    '{@/if}' +
+                    '{@each city.contents as it,i}' +
+                    '<div id="${index}_${it.promotion_type}_${it.layout}_${it.promotion_id}" data-lazy-url="getDetail_promotionDetail?id=${it.promotion_id}" class="item"></div>' +
+                    '{@/each}' +
+                    '</div>' +
+                    '{@/each}' +
+                    '</div>';
+        }
+        html = juicer(tpl, promotionItem);
+        $('#' + wrapRender).append(html);
+    },
+
+    promotionAdapter: function(promotionItem) {
+       // var jumpLink = 'redirectUrl_promotionstatistic?';
+        var jumpLink = 'toPage_promotionstatistic?';
+        var tpl = '';
+        if (typeof(promotionItem.index) != "undefined") {
+            var render = promotionItem.index + '_' + promotionItem.type + '_' + promotionItem.layout + '_' + promotionItem.id;
+        }
+        (function() {
+            if (promotionItem) {
+                switch (promotionItem.type) {
+                    case 'assortment':
+                        assortmentAdapter(promotionItem);
+                        break;
+                    case 'banner':
+                        bannerAdapter(promotionItem);
+                        break;
+                    case 'promotion':
+                        promotionAdapter(promotionItem);
+                        break;
+                    case 'tourdestination':
+                        tourdestinationAdapter(promotionItem);
+                        break;
+                    case 'tourproduct':
+                        tourproductAdapter(promotionItem);
+                        break;
+                    case 'hotshops':
+                        hotshopAdapter(promotionItem);
+                        break;
+                    case 'hotproducts':
+                        hotproductsAdapter(promotionItem);
+                        break;
+                }
+            } else {
+                console.error('promotionItem is null');
+            }
+        })();
+
+        function assortmentAdapter(promotionItem) {
+
+            switch (promotionItem.layout) {
+                case 'layout_1':
+                    tpl = '<div class="row uzou-type text-center ajaxitem" >' +
+                        '{@each details as item,index}' +
+                        '<div class="col-xs-3 iconbox" >' +
+                        '<div class="uzou-type-icon">' +
+                        '<img src="public/new/images/tmp/1-1.png" class="lazy" data-original="${item.icon_url}" data-index="${index}">' +
+                        '</div>' +
+                        '<span>${item.name}</span>' +
+                        '</div>' +
+                        '{@/each}' +
+                        '</div>';
+                    break;
+            }
+            promotDataAnalysis.generatehtml(render, tpl, promotionItem);
+            initTouchEvent(promotionItem);
+        }
+
+        function bannerAdapter(promotionItem) {
+
+            switch (promotionItem.layout) {
+                case 'layout_1':
+                    tpl = '<div class="row uzou-welcome uzou-md-bottom ajaxitem" >' +
+                        '<div class="swiper-container">' +
+                        '<div class="swiper-wrapper">' +
+                        '{@each details as item, index}' +
+                        '<div class="swiper-slide"  >' +
+                        '<img src="public/new/images/tmp/32-9.png" class="lazy" data-original="${item.img_url}" data-index="${index}"></div>' +
+                        '{@/each}' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                    break;
+            }
+            promotDataAnalysis.generatehtml(render, tpl, promotionItem);
+            var mySwiper = new Swiper('#' + render + ' .swiper-container', {
+                loop: true
+            });
+            var $bannerImg = $('#' + render + ' img.lazy');
+            $bannerImg.show().lazyload({
+                effect: "fadeIn",
+                threshold: 2000
+            });
+            initTouchEvent(promotionItem);
+        }
+
+        function promotionAdapter(promotionItem) {
+            switch (promotionItem.layout) {
+                case 'layout_1':
+                    tpl = ' <div class="row hot-recommend uzou-sm-bottom uzou-md-padding ajaxitem" >' +
+                        '<div class="col-xs-3">' +
+                        '<div class="hot-recommend-icon text-shadow1">${details.title}</div>' +
+                        '</div>' +
+                        '{@each details.contents as item, i}' +
+                        '<div class="col-xs-3" >' +
+                        '{@if i < 3} ' +
+                        '<div class="hot-lable hot-lable-color1 promotion" >${item.name}</div>' +
+                        '{@/if} ' +
+                        '{@if i >= 3&&i< 6} ' +
+                        '<div class="hot-lable hot-lable-color2 promotion" >${item.name}</div>' +
+                        '{@/if} ' +
+                        '{@if i >= 6&&i< 10}' +
+                        '<div class="hot-lable hot-lable-color3 promotion" >${item.name}</div>' +
+                        '{@/if} ' +
+                        '{@if i >= 10&&i< 14} ' +
+                        '<div class="hot-lable hot-lable-color4 promotion" >${item.name}</div>' +
+                        '{@/if}' +
+                        '</div>' +
+                        '{@/each}' +
+                        '</div>';
+                    break;
+                case 'layout_2':
+                    tpl = '<div class="row hot-recommend uzou-md-bottom uzou-md-padding" >' +
+                        '{@each details.contents as item, i}' +
+                        '<div class="col-xs-6" >' +
+                        '<div class="hot-recommend-img"><img data-original="${item.img_url}" src="public/new/images/tmp/20-11.png" class="lazy promotion"></div>' +
+                        '<div class="hot-recommend-text text-shadow1">${item.title}</div>' +
+                        '<div class="text-shadow1 hot-recommend-description">${item.mark}</div>' +
+                        '</div>' +
+                        '{@/each}' +
+                        '</div>';
+                    break;
+                case 'layout_3':
+                    tpl = '<ul class="list-unstyled">' +
+                        '<li class="uzou-lg-bottom">' +
+                        '<div class="hot-dest-comm-headline pink-left">${details.name}</div>' +
+                        '<div class="inner-wrap-96 clearfix">' +
+                        '{@each details.contents as item, i}' +
+                        '<div class="img-wrap-100">' +
+                        '<img src="public/new/images/tmp/16-9.png" data-original="${item.img_url}" class="lazy promotion">' +
+                        '<div class="hot-dest-layout1-btitle">' +
+                        '<h3 class="uzou-line-clamp1">${item.title}</h3>' +
+                        '<p class="pink-color uzou-line-clamp1">${item.mark}</p>' +
+                        '</div>' +
+                        '{@/each}' +
+                        '</div>' +
+                        '</div>' +
+                        '</li>' +
+                        '</ul>';
+                    break;
+                case 'layout_4':
+                    tpl = '<ul class="list-unstyled">' +
+                        '<li class="uzou-lg-bottom">' +
+                        '<div class="hot-dest-comm-headline orange-left">${details.name}</div>' +
+                        '<div class="inner-wrap-96 clearfix">' +
+                        '{@each details.contents as item, i}' +
+                        '<div class="uzou-comm-product uzou-md-bottom uzou-comm-shadow">' +
+                        '<img src="public/new/images/tmp/16-9.png" class="uzou-comm-product-img lazy promotion" data-original="${item.img_url}">' +
+                        '<div class="uzou-comm-product-headline uzou-comm-gradient1">' +
+                        '<p class="uzou-line-clamp1"> ${item.title} </p>' +
+                        '</div>' +
+                        '</div>' +
+                        '{@/each}' +
+                        '</div>' +
+                        '</li>' +
+                        '</ul>';
+                    break;
+                case 'layout_5':
+                    tpl = '<ul class="list-unstyled">' +
+                        '<li class="uzou-lg-bottom">' +
+                        '<div class="hot-dest-comm-headline theme-green-left">${details.name}</div>' +
+                        '<div class="inner-wrap-96 clearfix uzou-comm-lable">' +
+                        '{@each details.contents as item, i}' +
+                        '<div class="label-item">' +
+                        '<div class="uzou-comm-product ">' +
+                        '<img src="public/new/images/tmp/16-9.png" class="uzou-comm-product-img lazy" data-original="${item.img_url}">' +
+                        '<div class="uzou-comm-product-vtitle uzou-comm-gradient1">' +
+                        '<p class="uzou-line-clamp1 promotion">${item.title}</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '{@if i!=0&&i%3==0}' +
+                        '<p class="uzou-md-bottom"></p>' +
+                        '{@/if} {@/each}' +
+                        '</div>' +
+                        '</li>' +
+                        '</ul>';
+                    break;
+                case 'layout_6':
+                    tpl = '<ul class="list-unstyled">' +
+                        '<li class="uzou-lg-bottom">' +
+                        '<div class="hot-dest-comm-headline theme-green-left">${details.name}</div>' +
+                        '<div class="inner-wrap-96 clearfix">' +
+                        '{@each details.contents as item, i} ' +
+                        '{@if i==0}' +
+                        '<div class="uzou-comm-product uzou-md-bottom ">' +
+                        '<img src="public/new/images/tmp/16-9.png" data-original="${item.img_url}" class="uzou-comm-product-img lazy">' +
+                        '<div class="uzou-comm-product-vtitle uzou-comm-gradient1 promotion">' +
+                        '<p class="uzou-line-clamp1">${item.title}</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '{@/if} {@/each}' +
+                        '<div class="uzou-comm-lable clearfix">' +
+                        '{@each details.contents as item, i}' +
+                        '{@if i>0}' +
+                        '<div class="label-item">' +
+                        '<div class="uzou-comm-product uzou-md-bottom ">' +
+                        '<img src="public/new/images/tmp/16-9.png" data-original="${item.img_url}" class="uzou-comm-product-img lazy">' +
+                        '<div class="uzou-comm-product-vtitle uzou-comm-gradient1 promotion">' +
+                        '<p class="uzou-line-clamp1">${item.title}</p>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '{@/if} {@/each}' +
+                        '</div>' +
+                        '</li>' +
+                        '</ul>';
+                    break;
+            }
+            if (render) {
+                promotDataAnalysis.generatehtml(render, tpl, promotionItem);
+                initTouchEvent(promotionItem);
+            }
+        }
+
+        function tourdestinationAdapter(promotionItem) {
+            switch (promotionItem.layout) {
+                case 'layout_1':
+                    tpl = '<ul class = "list-unstyled" > ' +
+                        '<li class="uzou-lg-bottom">' +
+                        '<div class="hot-dest-comm-headline theme-green-left">${details.name}</div>' +
+                        '<div class="inner-wrap-96">' +
+                        '<div class="uzou-comm-lable clearfix ">' +
+                        '{@each details.contents as item, i}' +
+                        '<div class="label-item label-border-radius city-code uzou-line-clamp2">${item.title}</div>' +
+                        '{@if i!=0&&(i+1)%3==0}' +
+                        '<p class="clearfix uzou-md-bottom"></p>' +
+                        '{@/if} {@/each}' +
+                        '</div>' +
+                        '</div>' +
+                        '</li>' +
+                        '</ul>';
+                    break;
+            }
+            if (render) {
+                promotDataAnalysis.generatehtml(render, tpl, promotionItem);
+                initTouchEvent(promotionItem);
+            }
+        }
+
+        function tourproductAdapter(promotionItem) {
+            switch (promotionItem.layout) {
+                case 'layout_1':
+                    tpl = '<ul class="list-unstyled">' +
+                        '<li class="uzou-lg-bottom">' +
+                        '<div class="hot-dest-comm-headline theme-green-left">${details.name}</div>' +
+                        '<div class="inner-wrap-96 clearfix">' +
+                        '{@each details.contents as item, i}' +
+                        '<div class="uzou-comm-product uzou-md-bottom">' +
+                        '<img src="public/new/images/tmp/16-9.png" class="uzou-comm-product-img lazy" data-original="${item.carouselpicture}">' +
+                        '<div class="uzou-comm-product-bprice">' +
+                        '{@if item.currency=="CNY"}' +
+                        '<div class="uzou-comm-price-rmb">${item.symbol}&nbsp;${item.lowestPrice_toc_cny|formate_money}<span class="list-price-qi">起</span></div>' +
+                        '{@else}' +
+                        '<div class="uzou-comm-price-rmb">¥&nbsp;${item.lowestPrice_toc_cny|formate_money}<span class="list-price-qi">起</span></div>' +
+                        '<div class="uzou-comm-price-wb">${item.currency}&nbsp;${item.lowestPrice_tob_cny|formate_money}<span class="list-price-qi">起</span></div>' +
+                        '{@/if}' +
+                        '</div>' +
+                        '<div class="recommend-product-title uzou-line-clamp2">${item.name}</div>' +
+                        '</div>' +
+                        '{@/each}' +
+                        '</div>' +
+                        '</li>' +
+                        '</ul>';
+                    break;
+            }
+            if (render) {
+                promotDataAnalysis.generatehtml(render, tpl, promotionItem);
+                initTouchEvent(promotionItem);
+            }
+        }
+
+        function hotshopAdapter(promotionItem) {
+
+            switch (promotionItem.layout) {
+                case 'layout_1':
+                    tpl = '<div class="row uzou-gray-empty"></div>' +
+                        '<div class="row hot-recommend-shop uzou-md-bottom" >' +
+                        '<div class="hot-recommend-shop-title">' +
+                        '<div><img src="public/new/images/home/comm/hotshop.png"></div>' +
+                        '<p class="small shop-title-intrudction">优选来自世界各地的旅游商家 带来最原汁原味的旅游产品</p>' +
+                        '</div>' +
+                        '<div class="hot-shop-list">' +
+                        '{@each details as item, i}' +
+                        '<div class="hot-shop-list-item" >' +
+                        '<img data-original="${item.picture}" src="public/new/images/tmp/hotshop@2x.png" class="shop-bgimg lazy">' +
+                        '<img data-original="${item.field1}"  src="public/new/images/tmp/20-11.png" class="shop-logo lazy">' +
+                        '<div class="shop-name">' +
+                        '<h5 class="text-shadow1">${item.field2}</h5>' +
+                        '<p class="text-shadow1"><small>${item.address}</small></p>' +
+                        '</div>' +
+                        '<a class="shop-link">查看全部</a>' +
+                        '</div>' +
+                        '{@/each}' +
+                        '</div>' +
+                        '</div>';
+                    break;
+            }
+            promotDataAnalysis.generatehtml(render, tpl, promotionItem);
+            initTouchEvent(promotionItem);
+        }
+
+        function hotproductsAdapter(promotionItem) {
+            switch (promotionItem.layout) {
+                case 'layout_1':
+                    tpl = '<div class=" row more-hot-recommend uzou-md-bottom">' +
+                        '<div class="more-hot-recommend-title">' +
+                        '<h5><img src="public/new/images/home/comm/moreicon.png"  class="more-hot-recommend-icon">更多精彩推荐</h5>' +
+                        '</div>' +
+                        '<div class="more-hot-list">' +
+                        '{@each details as item, i}' +
+                        '<div class="uzou-comm-product-h uzou-md-bottom uzou-comm-shadow">' +
+                        '<img data-original="${item.picture_url}" src="public/new/images/tmp/16-9.png" class="uzou-comm-product-img lazy">' +
+                        '<div class="uzou-comm-product-price">' +
+                        '{@if item.currency=="CNY"}' +
+                        '<div class="uzou-comm-price-rmb">${item.symbol}&nbsp;${item.ratevisamoney|formate_money}<span class="list-price-qi">起</span></div>' +
+                        '{@else}' +
+                        '<div class="uzou-comm-price-rmb">¥&nbsp;${item.ratevisamoney|formate_money}<span class="list-price-qi">起</span></div>' +
+                        '<div class="uzou-comm-price-wb">${item.currency}&nbsp;${item.visamoney|formate_money}<span class="list-price-qi">起</span></div>' +
+                        '{@/if}' +
+                        '</div>' +
+                        '<div class="uzou-comm-product-ttitle uzou-comm-gradient1 uzou-line-clamp2">${item.product_name}</div>' +
+                        '</div>' +
+                        '{@/each}' +
+                        '</div>' +
+                        '</div>';
+                    break;
+            }
+            promotDataAnalysis.generatehtml(render, tpl, promotionItem);
+            initTouchEvent(promotionItem);
+        }
+
+        /**
+         * 添加touch事件
+         * @param  {jsonObj} promotion   推广位对象
+         * @return                          null
+         */
+        // 统计参数
+        // conPrId       promotionItem.index; //首页 0 目的地  推广列表 索引
+        // 'platform':   platform       =  m-h5 m-app-andriod m-app-ios
+        // 'pageName':   pageName,      =  hone destination
+        // 'prId'    :   promotion.id,  =  promotion_id
+        // 'conPrId' :   conPrId,       =  content_promotion_id
+        // 'proType' :   proType,       =  promotion type
+        // 'position':   i 推广位置索引                 has  assortment | promotion | hotshops | tourproduct | hotproducts | tourdestination | banner |
+
+        // 查询参数
+        // 地区        cityCode     type0      has  assortment | promotion |          |             |             | tourdestination |
+        // 标签        abel_ids,    type1      has  assortment | promotion |          |             |             |                 |
+        // 链接        link_url     type2      has  assortment | promotion |          |             |             |                 |
+
+        // 产品类型     1-6                   has  assortment |           |          |             |             |                 |
+        // 热门商铺     shopId                has             |           | hotshops |             |             |                 |
+        // 热门产品     productId             has             |           |          | tourproduct | hotproducts |                 |
+
+
+        function initTouchEvent(promotion) {
+        	
+            var conPrId = promotionItem.index; //首页 0 目的地  推广列表 索引
+            var pageName = promotion.positionType;
+            var platform = promotion.platformType;
+            var layout = promotion.layout;
+            var proType = promotion.type;
+            var areaCode = promotion.areaCode||'';
+            var proDetails = promotion.details || {};
+            jumpLink += jiontUrl({
+                'platform': platform, //m-app-andriod        m-h5        m-app-ios
+                'pageName': pageName, //hone                 destination
+                'prId': promotion.id, //promotion_id
+                'conPrId': conPrId, //content_promotion_id
+                'proType': proType, //promotion type
+                'areaCode':areaCode
+            });
+            console.log(jumpLink);
+            //查询参数
+            switch (proType) {
+                case 'assortment':
+                    touch.on($('#' + render + ' img'), 'tap', function() {
+                        var i = $(this).attr('data-index');
+                        var proDetail = proDetails[i];
+                        var tmpUrl;
+                        if (proDetail.type == "1") {
+                            tmpUrl = jumpLink + '&' + jiontUrl({
+                                'position': i,
+                                'tmpUrl': 'label_assortment'
+                            });
+                            tmpUrl = 'label_assortment';
+                        } else {
+                            tmpUrl = jumpLink + '&' + jiontUrl({
+                                'position': i, //posotion 推广位位置索引
+                                'labelId': proDetail.label_ids, //标签 id
+                                'cityCode': proDetail.city_code, //地区 cityCode
+                                'productType': proDetail.product_type // 产品类型 1-6
+                            });
+
+                        }
+                       
+                        location.href = tmpUrl;
+                        
+                    });
+                    break;
+                case 'banner':
+                    $('#' + render + ' img').on('click', function() {
+                        var i = $(this).attr("data-index");
+                        var proDetail = proDetails[i];
+                        if (proDetail.link_url == '') {
+                            location.href = 'javascript:void(0)';
+
+                        } else {
+                            var tmpUrl = jumpLink + '&' + jiontUrl({
+                                'position': i,
+                                'redirectUrl': proDetail.link_url,
+                            });
+                            location.href = tmpUrl;
+
+                        }
+
+                    });
+                    break;
+                case 'promotion':
+                    touch.on($('#' + render + ' .promotion'), 'tap', function(e) {
+                        var i = $(this).index('#' + render + ' .promotion');
+                        if(i=='-1'){
+                        	i = $(this).parents('.promotion').index('#' + render + ' .promotion');
+                        }
+                        var proDetail = proDetails.contents[i];
+                        console.log($(this))
+                        console.log($('#' + render + ' .promotion'))
+                        var tmpUrl;
+                            if (proDetail.type == "0") {
+                                tmpUrl = jiontUrl({
+                                    'position': i,
+                                    'pType': '0',
+                                    'cityCode': proDetail.city_code,
+                                });
+
+                            } else if (proDetail.type == "1") {
+                                tmpUrl = jiontUrl({
+                                    'position': i,
+                                    'pType': '1',
+                                    'labelId': proDetail.label_ids,
+                                });
+
+                            } else if (proDetail.type == "2") {
+                            	if (proDetail.link_url) {
+                                    location.href = 'javascript:void(0)';
+                                }
+                                tmpUrl = jiontUrl({
+                                    'position': i,
+                                    'pType': '2',
+                                    'redirectUrl': proDetail.link_url
+                                });
+                            }
+                            console.log(tmpUrl)
+                            location.href = jumpLink +'&productType=1'+ '&' + tmpUrl;
+
+                    });
+                    break;
+                case 'hotshops':
+                    touch.on($('#' + render + ' .shop-link'), 'tap', function() {
+                        var i = $(this).index('#' + render + ' .shop-link');
+                        var proDetail = proDetails[i];
+                        console.log(proDetail);
+                        if (proDetail.shopid) {
+                            var tmpUrl = jiontUrl({
+                                'position': i,
+                                'shopId': proDetail.shopid
+                            });
+                            location.href = jumpLink + '&' + tmpUrl;
+                        }
+                    });
+                    break;
+                case 'hotproducts':
+                    touch.on($('#' + render + ' .uzou-comm-product-img'), 'tap', function() {
+                        var i = $(this).index('#' + render + ' .uzou-comm-product-img');
+                        console.log($(this), i);
+                        var proDetail = proDetails[i];
+                        if (proDetail.product_id) {
+                            var tmpUrl = jiontUrl({
+                                'position': i,
+                                'productId': proDetail.product_id
+                            });
+                            console.log(jumpLink +'&productType=1'+ '&' + tmpUrl)
+                            location.href = jumpLink + '&' + tmpUrl;
+                           
+                            
+                        }
+                    });
+                    break;
+                case 'tourdestination':
+                    touch.on($('#' + render + ' .city-code'), 'tap', function() {
+                        var i = $(this).index('#' + render + ' .city-code');
+                        var proDetail = (proDetails.contents)[i];
+                        if (proDetail.city_code) {
+                            var tmpUrl = jiontUrl({
+                                'position': i,
+                                'cityCode': proDetail.city_code
+                            });
+                            location.href = jumpLink +'&productType=1'+ '&' + tmpUrl;
+                        }
+                    });
+                    break;
+                case 'tourproduct':
+                    touch.on($('#' + render + ' .uzou-comm-product-img'), 'tap', function() {
+                        var i = $(this).index('#' + render + ' .uzou-comm-product-img');
+                        var proDetail = (proDetails.contents)[i];
+                        if (proDetail.id) {
+                            var tmpUrl = jiontUrl({
+                                'position': i,
+                                'redirectUrl': 'detialComm_commProduct',
+                                'productId': proDetail.id
+                            });
+                            console.log(tmpUrl);
+                            location.href = jumpLink + '&' + tmpUrl;
+                        }
+                    });
+                    break;
+                default:
+                    throw 'initTouchEvent v promotion type...';
+                    break;
+            }
+
+            function jiontUrl(params) {
+                var urlParams = '';
+                for (var key in params) {
+                    if (params[key]||params[key]==0) {
+                        if (urlParams) {
+                            urlParams += '&';
+                        }
+                        urlParams += key + '=';
+                        urlParams += params[key];
+                    }
+                }
+                return urlParams || '';
+            }
+        }
+    },
+    generatehtml: function(render, tpl, promotionData) {
+    	juicer.register('formate_money', uzouComm.formateMoney);
+        $('#' + render).append(juicer(tpl, promotionData));
+    }
+}

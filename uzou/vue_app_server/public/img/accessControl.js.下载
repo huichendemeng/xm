@@ -1,0 +1,23 @@
+/*首页访问统计
+ * 依赖jquery
+ * 20160201
+ */
+var accessControl = {
+	'add':function () {
+		setTimeout(function(){
+			$.post("addLoginStatistic_LoginStatistics", function(data) {
+			});
+		}, 3 * 1000);// 3秒后执行添加方法
+	},
+	'updateLogout':function() {
+		setInterval(function(){
+			$.post("updateLoginStatistic_LoginStatistics", function(data) {});			
+		}, 60 * 1000);// 每隔1分钟执行一次updateLogout方法
+	}
+};
+$(function() {
+	accessControl.add();
+	accessControl.updateLogout();
+});
+
+

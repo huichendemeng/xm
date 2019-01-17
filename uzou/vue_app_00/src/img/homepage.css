@@ -1,0 +1,292 @@
+body {
+    padding: 60px 0;
+}
+
+/*八大类*/
+.uzou-type .iconbox {
+    padding: 0;
+    margin: 8px 0;
+}
+
+.uzou-type .uzou-type-icon img {
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+.uzou-type span {
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+    overflow: hidden;
+    height: 14px;
+
+    padding: 0 1px;
+    color: #909090;
+}
+
+/*轮播图*/
+
+.uzou-welcome {
+    overflow: hidden;
+}
+
+.uzou-welcome .swiper-wrapper img {
+    width: 100%;
+}
+
+.hot-recommend {
+    overflow: hidden;
+}
+
+.hot-recommend div {
+    padding: 0;
+}
+
+.hot-recommend .hot-recommend-icon {
+    font-size: 16px;
+    line-height: 85px;
+    overflow: hidden;
+    height: 85px;
+    margin: 0 3px 5px 3px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    background: -webkit-linear-gradient(left top, #60e6aa, #03d3f3);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(bottom right, #60e6aa, #03d3f3);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom right, #60e6aa, #03d3f3);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom right, #60e6aa, #03d3f3);
+    /* 标准的语法 */
+}
+
+.hot-recommend .hot-lable {
+    line-height: 40px;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 40px;
+    margin: 0 3px 5px 3px;
+    padding: 0 2px;
+    text-align: center;
+}
+
+.hot-recommend-img {
+    overflow: hidden;
+    margin: 0 3px;
+    border-radius: 2px;
+}
+
+.hot-recommend-img img {
+    width: 100%;
+    border-radius: 2px;
+}
+
+.hot-recommend-text {
+    line-height: 18px;
+    position: absolute;
+    z-index: 22;
+    top: 5px;
+    left: 10px;
+    overflow: hidden;
+    width: 80%;
+    height: 18px;
+    padding-left: 3px !important;
+    color: #fff;
+    border-left: 2px solid #42d2a9;
+}
+
+.hot-recommend-description {
+    font-size: 12px;
+    line-height: 14px;
+    position: absolute;
+    z-index: 22;
+    top: 25px;
+    left: 10px;
+    overflow: hidden;
+    width: 80%;
+    height: 18px;
+    padding-left: 3px !important;
+    color: #fff;
+}
+
+/*热门推荐 商家*/
+
+.hot-recommend-shop {
+    background: #fff;
+}
+
+.hot-recommend-shop .hot-recommend-shop-title {
+    margin-bottom: 8px;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.hot-recommend-shop .shop-title-intrudction {
+    color: #ccc;
+}
+
+.hot-recommend-shop .hot-recommend-shop-title img {
+    height: 20px;
+    margin: 10px 0 8px 0;
+}
+
+.hot-recommend-shop .hot-shop-list {
+    padding: 0 8px;
+}
+
+.hot-recommend-shop .hot-shop-list .hot-shop-list-item {
+    position: relative;
+    overflow: hidden;
+    height: 90px;
+    margin-bottom: 8px;
+}
+
+.hot-shop-list-item .gradual-change-shade {
+    position: absolute;
+    z-index: 555;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 75%, rgba(0, 0, 0, .36) 75%);
+}
+
+.hot-recommend-shop .hot-shop-list .shop-bgimg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.hot-recommend-shop .hot-shop-list .shop-logo {
+    position: absolute;
+    z-index: 33;
+    top: 0;
+    bottom: 0;
+    left: 5%;
+    width: 54px;
+    height: 54px;
+    margin: auto 0;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.hot-recommend-shop .hot-shop-list .shop-logo img {
+    width: 100%;
+}
+
+.hot-recommend-shop .hot-shop-list .shop-link {
+    line-height: 90px;
+    position: absolute;
+    z-index: 44;
+    z-index: 666;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin: auto 0;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(0, 0, 0, .6);
+}
+
+.hot-recommend-shop .hot-shop-list .shop-name {
+    position: absolute;
+    z-index: 44;
+    top: 0;
+    right: 90px;
+    bottom: 0;
+    left: 25%;
+    height: auto;
+    margin: auto 0;
+    padding-top: 18px;
+    text-align: left;
+    color: #fff;
+}
+
+.hot-recommend-shop .hot-shop-list .shop-name h5 {
+    line-height: normal;
+    display: block;
+    overflow: hidden;
+    height: 18px;
+    margin-bottom: 4px;
+}
+
+.hot-recommend-shop .hot-shop-list .shop-name p {
+    line-height: 14px;
+    overflow: hidden;
+    height: 20px;
+}
+
+/*更多推荐*/
+
+.more-hot-recommend .more-hot-recommend-title {
+    text-align: center;
+    color: #7d7d7d;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    background: #f3f3f3;
+}
+
+.more-hot-recommend-title .more-hot-recommend-icon {
+    width: 15px;
+    margin-right: 8px;
+}
+
+.more-hot-recommend-title h5 {
+    /*设置为块级元素会独占一行形成上下居中的效果*/
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.more-hot-recommend-title h5:after {
+    position: absolute;
+    /*定位背景横线的位置*/
+    top: 52%;
+    width: 12%;
+    height: 1px;
+    content: '';
+    /*CSS伪类用法*/
+    background: #c6c6c6;
+    /*宽和高做出来的背景横线*/
+}
+
+.more-hot-recommend-title h5:before {
+    position: absolute;
+    /*定位背景横线的位置*/
+    top: 52%;
+    width: 12%;
+    height: 1px;
+    content: '';
+    /*CSS伪类用法*/
+    background: #c6c6c6;
+    /*宽和高做出来的背景横线*/
+}
+
+.more-hot-recommend-title h5:after {
+    left: 15%;
+}
+
+.more-hot-recommend-title h5:before {
+    right: 15%;
+}
+
+.more-hot-recommend .more-hot-list {
+    padding: 8px;
+}
+
+.emptybox {
+    height: 20px;
+    border-top: 1px solid #e6e6e6;
+    background: #f3f3f3;
+}
