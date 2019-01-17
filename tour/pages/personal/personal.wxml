@@ -1,0 +1,13 @@
+<!--pages/personal/personal.wxml-->
+<view class="avatar">
+  <view class="edit"><text bindtap="edit">编辑</text></view>
+  <view class="info">
+    <view class="head-img"><image src="{{userInfo.avatarUrl}}"></image></view>
+    <view class="uname"><text>{{userInfo.uname}}</text></view>
+    <text class="tel">{{userInfo.tel}}</text>
+  </view>
+</view>
+<view class="cell">
+  <view class="cell-item">我的订单</view>
+  <view class="cell-item">优惠券</view>
+</view>

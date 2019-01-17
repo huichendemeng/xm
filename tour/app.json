@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/destination/destination",
+    "pages/personal/personal",
+    "pages/liner/liner",
+    "pages/detail/detail",
+    "pages/modify-info/modify-info",
+    "pages/ticket/ticket"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#98d361",
+    "navigationBarTitleText": "爱旅游",
+    "navigationBarTextStyle": "#ffffff",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home_active.png"
+      },
+      {
+        "pagePath": "pages/destination/destination",
+        "text": "目的地",
+        "iconPath": "img/destination.png",
+        "selectedIconPath": "img/destination_active.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "img/my.png",
+        "selectedIconPath": "img/my_active.png"
+      }
+    ]
+  }
+}

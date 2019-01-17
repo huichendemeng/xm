@@ -1,0 +1,129 @@
+/*搜索*/
+.search{
+  background: #eee;
+  height:80rpx;
+  width:86%;
+  margin:20rpx auto;
+  border-radius:10rpx;
+}
+.search input{
+  font-size:12px;
+  background: url(http://127.0.0.1:3001/img/home/fdj.png) no-repeat;
+  background-size:40rpx 40rpx;
+  background-position: 30rpx 20rpx;
+  padding:15rpx 90rpx;
+}
+/* 轮播 */
+.carousel,.carousel swiper,.carousel image{
+  width:100%;
+  height:300rpx;
+}  
+/*九宫格*/
+.index-nav{
+  display: flex;
+  flex-wrap: wrap;
+}
+.index-nav .nav-item{
+  height: 160rpx;
+  width: 25%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+}
+.index-nav image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+}
+/* 目的地 */
+.destitle{
+  width: 100%;
+  height: 30rpx;
+  font-size: 16px;
+  padding:0 5%;
+  margin:2px 0 7px;
+ 
+}
+.destination{
+  color:fuchsia;
+    display: inline-block;
+  width:85%;
+}
+.arrow{
+  width:3%;
+}
+.deslist{
+  display: flex;
+  flex-wrap: wrap;
+  padding:0 30rpx;
+  padding-bottom: 20rpx;
+  font-size:14px;
+  color:violet;
+}
+.deslist .kuang{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;                                                                
+  height: 90rpx;
+  width: 23%;
+  background-color:#eee;
+  border-radius: 6px;
+  margin: 3px 3px;
+}
+.divider{
+  height: 20px;
+  width: 100%;
+  background-color: #eee;
+}
+/*优选旅程*/
+.select{
+  background: url(http://127.0.0.1:3001/img/home/you.jpg) no-repeat;
+  background-size:50rpx 50rpx;
+  text-align: center;
+  margin:20rpx 0;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+  font-size: 15px;
+  background-position: 250rpx 0;
+}
+.list{
+  padding: 0 5%;
+  width:100%;
+}
+.wrap{
+  align-items: center;                                                                
+  height: 300rpx;
+  width: 45%;
+  font-size: 11px;
+  position: relative;
+  color:gray;
+  display: inline-block;
+}
+.wrap image{
+  position: absolute;
+  width:320rpx;
+  height:180rpx; 
+}
+.wrap .mask{
+  position: absolute;
+  background: rgba(29, 28, 28,.3);
+  width:320rpx;
+  height:180rpx;
+  color:#fff;
+  font-size:16px;
+  z-index:99;
+  line-height: 180rpx;
+  text-align: center;
+}
+.wrap .text{
+  position:absolute;
+  top:200rpx;
+  display: flex;
+  flex-direction: column;
+  left:10rpx;
+}
+.wrap .title{font-size:13px;}
+.wrap .classify{color:#aaa}

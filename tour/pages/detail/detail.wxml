@@ -1,0 +1,14 @@
+<view wx:for="{{list}}"wx:key="{{item.id}}">
+  <image src="{{'http://127.0.0.1:3001/img/'+item.img}}" lazy-load mode="aspectFill" class="img"></image>
+  <view class="detail">
+    <view class="title">
+      {{item.title}}
+    </view>
+    <view class="classify">
+      <text>{{item.classify1}}</text>
+      <text>{{item.classify2}}</text>
+      <text>{{item.classify3}}</text>
+    </view>
+    <view class="divider"></view>
+  </view>
+</view>
